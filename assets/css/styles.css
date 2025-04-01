@@ -1,0 +1,87 @@
+:root {
+	--colour-logo: #000000;
+	--colour-title: #1c1c1c;
+	--colour-body: #1c1c1c;
+	--colour-nav: #1c1c1c;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 100%;
+}
+
+body {
+    background: #f4f4f4;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+h1 {
+    color: var(--colour-logo);
+    font-size: 4.2rem;
+    font-weight: 450;
+    display: flex;
+    /* align-content: center; */
+    justify-content: center;
+    background: #98beff;
+}
+h2 {
+    color: var(--colour-title);
+    font-size: clamp(1rem, 2vw + 1rem, 3rem);
+    /* (phones, preferred fluid size - scales with viewport width, maximum font-size) */
+    font-weight: 600;
+}
+h3 {
+    color: var(--colour-title);
+    font-size: 2rem;
+    font-weight: 180;
+}
+h6 {
+    color: var(--colour-title);
+}
+
+p {
+    margin-bottom: 2em;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: var(--colour-body)
+}
+
+
+header {
+    
+    /* justify-content: center; */
+    flex-wrap: wrap;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 4.5em;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--colour-nav);
+    padding: 0.15em 0.75em;
+    background: #98beff;
+    font-size: 1.2rem;
+    /* font-size: 1.4rem; */
+}
+/* nav a {
+    text-decoration: none;
+    color: var(--colour-nav);
+    padding: 0.15em 0.75em;
+    background: #98beff;
+    border-radius: 0.5em;
+    letter-spacing: 0.2em;
+    font-size: 80%;
+} */
+  
+/* a :hover {
+
+}
+a :active {
+
+} */
+
