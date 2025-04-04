@@ -1,87 +1,115 @@
 :root {
+    /* --- FONT VARIABLES --- */
+    --font-1: 'Times New Roman', Times, serif;
+    --font-2: Helvetica, Arial, sans-serif;
+    --font-3: Helvetica, Arial, sans-serif;
+
+    /* --- COLOUR VARIABLES --- */
 	--colour-logo: #000000;
+    --colour-header: #ffffff;
+    --colour-background:#98beff;
+    --colour-body1: #f4f4f4;
 	--colour-title: #1c1c1c;
 	--colour-body: #1c1c1c;
 	--colour-nav: #1c1c1c;
+    
+    /* --- TEST COLOUR VARIABLES --- */
+    --colour-test1:#98beff;
+    --colour-test2: grey;
+    --colour-test3: lightgrey;
 }
 
 html {
     scroll-behavior: smooth;
     font-size: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    background: #f4f4f4;
-    font-family: Arial, Helvetica, sans-serif;
+    background: var(--colour-body1);
     font-size: 1rem;
+    font-family: var(--font-2);
     margin: 0;
+    padding: 0;
     width: 100%;
 }
 
+h1 a {
+    text-decoration: none;
+    color: var(--colour-logo);
+}
 h1 {
+    font-size: clamp(1.2rem, 2vw + 2rem, 3.6rem);
+    font-family: var(--font-1);
+    font-variant: small-caps;
+    font-weight: 500;
+    /* font: small-caps clamp(1.2rem, 2vw + 2rem, 3.6rem) var(--font-1); */
     color: var(--colour-logo);
     text-align: center;
-    font-size: clamp(2rem, 3vw + 1.8rem, 3.9rem);
-    font-weight: 450;
-    padding: 15px 0.5em 5px 0.5em;
+    letter-spacing: 0.2rem;
+    padding: 0.5em 0.5em 5px 0.5em;
     display: flex;
     align-content: center;
     justify-content: center;
-    background: #98beff;
-    margin: 0 0 0.3em 0;
+    /* background: var(--colour-background); */
+    margin-bottom: 0.35em;
 }
 h2 {
-    color: var(--colour-title);
-    font-size: clamp(1rem, 2vw + 1rem, 3rem);
+    /* background: var(--colour-background); */
+    font-size: clamp(1.5rem, 3vw + 2rem, 3.9rem);
     /* (phones, preferred fluid size - scales with viewport width, maximum font-size) */
-    font-weight: 600;
-    background: #98beff;
+    font-family: var(--font-1);
+    font-weight: 420;
+    color: var(--colour-title);
 }
 h3 {
     color: var(--colour-title);
     font-size: 2rem;
-    font-weight: 180;
+    font-weight: 300;
 }
 h6 {
     color: var(--colour-title);
 }
 p {
-    margin-bottom: 2em;
-    font-size: 1.2rem;
+    font-size: clamp(0.6rem, 1rem + 2vw, 1.2rem);
+    font-family: var(--font-3);
     line-height: 1.6rem;
-    color: var(--colour-body)
+    color: var(--colour-body);
+    margin-bottom: 2em;
 }
 
 
 header {
-    /* flex-wrap: wrap; */
-    /* align-content: center; */
-    background: lightgrey;
+    background: var(--colour-header);
     top: 0;
     position: sticky;
-    max-height: 100em;
-    min-height: 10em;
+    height: fit-content;
     align-items: center;
     justify-content: center;
+    /* z-index: 1000; */
+    /* flex-wrap: wrap; */
 }
 
-
-header nav {
-	background: grey;
+.nav-head {
+	/* background: var(--colour-test2); */
 	width: 100%;
+    padding-bottom: 1em;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 header nav ul {
-    list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 0;
+
+    list-style: none;
     margin: 0.5em 0.5em 1em 0.5em;
+    padding: 0;
+    
     row-gap: 1em; /* top & bottom spacing */
     column-gap: clamp(2.5em, 6vw, 9em); /* left & right spacing */
     /* gap: clamp(0.25em, 3vw, 4.5em); */
@@ -93,13 +121,52 @@ header nav li {
 }
 
 header nav a {
-    text-decoration: none;
-    color: var(--colour-nav);
-    background: #98beff;
+    /* background: var(--colour-background); */
     font-size: clamp(0.6rem, 1vw + 0.6rem, 1.2rem);
+    font-family: var(--font-2);
+    text-decoration: none;
     text-align:center;
+    color: var(--colour-nav);
+
     padding: 0.15em 0.75em;
 }
+
+.nav-head a:hover {
+    /* font-weight: 300; */
+    font-size: clamp(0.6rem, 1vw + 0.6rem, 1.2rem);
+    font-family: var(--font-2);
+    background: var(--colour-body1);
+    border-radius: 5px;
+}
+.nav-head a:active {
+    /* text-decoration: underline; */
+    box-shadow: inset -1px -1px 5px rgba(0, 0, 0, 0.15);
+}
+.nav-head .currentpage {
+    /* text-decoration: underline; */
+    text-decoration-color: var(--colour-nav);
+    text-decoration-line: underline;
+    text-decoration-thickness: 3px;
+}
+
+/* .nav-head .currentpage {
+    position: relative;
+    color: var(--colour-nav); *//* ensure color matches *//*
+} */
+
+/* Add a "fake" underline using ::after */
+/* .nav-head .currentpage::after {
+    content: "";
+    position: absolute;
+    bottom: 0; aligns with the bottom of the text */
+    /* left: 50%;
+    transform: translateX(-50%);
+    width: 120%; /* control the underline width here */
+    /* height: 3px;  /* thickness of the underline */
+    /* background-color: var(--colour-nav);
+    border-radius: 2px;
+} */
+
 
 
 /* 
