@@ -12,11 +12,6 @@ function centerBurger() {
 
     var burgerY = (headerHeight/2) - (burgerHeight/2);
     burger.style.top = burgerY + "px";
-
-    console.log("1 header height: ", header.offsetHeight);
-    console.log("1 burger height: ", burger.offsetHeight);
-    console.log("1 burger y: ", burgerY);
-    console.log("1 Burger y (viewport): ", burger.getBoundingClientRect().top, "px");
 }
 
 function phoneNavPad(maxW) {
@@ -46,10 +41,3 @@ window.addEventListener("resize", centerBurger);
 maxW.addEventListener("change", function() {
     phoneNavPad(maxW);
 });
-
-
-// debugging
-console.log("2 header height: ", header.offsetHeight);
-console.log("2 burger height: ", burger.offsetHeight);
-// console.log("2 burger y: ", burgerY);
-console.log("2 Burger y (viewport): ", burger.getBoundingClientRect().top, "px");
